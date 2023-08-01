@@ -4,6 +4,15 @@ import Card from "./components/UI/Card/Card";
 import Banner from "./components/UI/Banner/Banner";
 
 function App() {
+  const customStyle = {
+    // Define your CSS styles here as key-value pairs
+    backgroundColor: 'orange-300',
+    color: 'white',
+    padding: '10px',
+    borderRadius: '8px',
+    cursor: 'pointer',
+    // Add more styles as needed
+  };
   // State variables to control the start, attempt, question, card and result of the Quiz
   const [start, setStart] = useState(true);
   const [attempt, correctAnswerMarkUpdate] = useState(0);
@@ -49,8 +58,16 @@ function App() {
                 <Card key={index} question={q.question}  correctAnswerMarkUpdate={correctAnswerMarkUpdate} attempt={attempt} options={opt} answer={q.answer} setQsns={setqsnAttempt} qsn={ qsnAttempt} setCard={setResult} qsnAttempt={qsnAttempt} />            
               ))}
           </div>}
-          {result && <Button onClick={handleResult} style={"bg-orange-300 px-10 py-2 rounded hover:bg-orange-400 mt-3"} >Show Results</Button>}
-          {start && <Button onClick={ handleStart} style={"bg-orange-300 px-10 py-2 rounded hover:bg-orange-400"}>Start Quiz</Button>   }
+          {result && (
+        <Button onClick={handleResult} style={customStyle}>
+          Show Results
+        </Button>
+      )}
+      {start && (
+        <Button onClick={handleStart} style={customStyle}>
+          Start Quiz
+        </Button>
+      )}
       </div>
     </div>
   );
