@@ -21,7 +21,8 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]"rules": {
+    ],
+    "rules": {
       "react/style-prop-object": "warn"
   },
   "browserslist": {
